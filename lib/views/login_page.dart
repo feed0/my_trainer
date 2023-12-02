@@ -112,13 +112,10 @@ class LoginPage extends StatelessWidget {
       if (email == 'trainee@mail.com' && password == 'aaa123') {
         Navigator.of(inContext).pushNamed(Routes.traineeApp);
         clearFields();
+      } else if (email == 'trainer@mail.com' && password == 'aaa123') {
+        Navigator.of(inContext).pushNamed(Routes.traineeApp);
+        clearFields();
       }
-
-      // TODO add trainer routes and restabilish this code
-      // else if (email == 'trainer@mail.com' && password == 'aaa123') {
-      //   Navigator.of(inContext).pushNamed(Routes.agendaPage);
-      //   clearFields();
-      // }
 
       // invalid credentials
       else {

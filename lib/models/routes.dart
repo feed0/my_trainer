@@ -10,6 +10,7 @@ class Routes {
   // static const routinesPage = '/routines_page';
 
   // TRAINER PAGES
+  static const trainerApp = '/trainer_app';
   // static const agendaPage = '/agenda_page';
   // static const traineesPage = '/trainees_page';
 }
