@@ -5,13 +5,16 @@ import '/views/trainee/today_page.dart';
 
 import '/models/brand.dart';
 
-void main() => runApp(
-      const MaterialApp(
-        home: Scaffold(
-          body: TraineeApp(),
-        ),
+void main() {
+  runApp(
+    const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: TraineeApp(),
       ),
-    );
+    ),
+  );
+}
 
 class TraineeApp extends StatelessWidget {
   const TraineeApp({super.key});
@@ -76,7 +79,7 @@ class _TraineeNavigationState extends State<TraineeNavigation> {
       ),
       body: <Widget>[
         /// Routines Page
-        const RoutinesPage(),
+        RoutinesPage(),
 
         /// Today Page
         const TodayPage(),
