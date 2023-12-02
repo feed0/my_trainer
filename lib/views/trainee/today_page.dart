@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:my_trainer/views/components/app_title.dart';
-import '/view_models/exercises_viewmodel.dart';
-// import 'package:meu_treinador/views/components/app_title.dart';
-
-// import '/views/components/page_title.dart';
-import '/views/components/exercise_tile.dart';
-// import 'trainee_navigation.dart';
 
 import '/models/brand.dart';
-// import '/models/exercise.dart';
 
-// import '/view_models/exercises_viewmodel.dart';
+import '/view_models/exercises_viewmodel.dart';
+
+import '/views/components/app_title.dart';
+import '/views/components/exercise_tile.dart';
 
 main() {
   runApp(const MaterialApp(

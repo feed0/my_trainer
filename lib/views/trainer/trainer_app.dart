@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '/views/profile_page.dart';
-import '/views/trainee/routines_page.dart';
-import '/views/trainee/today_page.dart';
+import '/views/trainer/agenda_page.dart';
+import '/views/trainer/trainees_page.dart';
 
 import '/models/brand.dart';
 
@@ -10,33 +10,33 @@ void main() {
     const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: TraineeApp(),
+        body: TrainerApp(),
       ),
     ),
   );
 }
 
-class TraineeApp extends StatelessWidget {
-  const TraineeApp({super.key});
+class TrainerApp extends StatelessWidget {
+  const TrainerApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true),
-      home: const TraineeNavigation(),
+      home: const TrainerNavigation(),
     );
   }
 }
 
-class TraineeNavigation extends StatefulWidget {
-  const TraineeNavigation({super.key});
+class TrainerNavigation extends StatefulWidget {
+  const TrainerNavigation({super.key});
 
   @override
-  State<TraineeNavigation> createState() => _TraineeNavigationState();
+  State<TrainerNavigation> createState() => _TrainerNavigationState();
 }
 
-class _TraineeNavigationState extends State<TraineeNavigation> {
+class _TrainerNavigationState extends State<TrainerNavigation> {
   int currentPageIndex = 1;
 
   @override
@@ -59,13 +59,13 @@ class _TraineeNavigationState extends State<TraineeNavigation> {
             // icon: Icon(Icons.home_outlined),
             // label: 'Home',
             icon: Icon(Icons.folder),
-            label: 'Treinos',
+            label: 'Alunos',
           ),
           NavigationDestination(
             // icon: Badge(child: Icon(Icons.notifications_sharp)),
             // label: 'Notifications',
             icon: Icon(Icons.today),
-            label: 'Hoje',
+            label: 'Agenda',
           ),
           NavigationDestination(
             // icon: Badge(
@@ -79,11 +79,11 @@ class _TraineeNavigationState extends State<TraineeNavigation> {
         ],
       ),
       body: <Widget>[
-        /// Routines Page
-        RoutinesPage(),
+        /// Trainees Page
+        TraineesPage(),
 
-        /// Today Page
-        const TodayPage(),
+        /// Agenda Page
+        const AgendaPage(),
 
         /// Profile Page
         const ProfilePage(),

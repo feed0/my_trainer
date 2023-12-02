@@ -1,7 +1,7 @@
 import '/models/exercise.dart';
 
 class ExercisesViewModel {
-  static List<Exercise> exercises = [
+  static final List<Exercise> exercises = [
     Exercise('Leg press 45', 10, 12),
     Exercise('Bench press', 4, 8),
     Exercise('Squat', 5, 10),
