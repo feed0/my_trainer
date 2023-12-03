@@ -28,20 +28,6 @@ class ExerciseTile extends StatefulWidget {
   ExerciseTileState createState() => ExerciseTileState();
 }
 
-// class _MarkWidgetState extends State<MarkWidget> with AutomaticKeepAliveClientMixin{
-//    ...
-
-// @override
-// Widget build(BuildContext context) {
-//   // call this method.
-//   super.build(context);
-//   ...
-// }
-
-//  @override
-//    bool get wantKeepAlive => true;
-//  }
-
 class ExerciseTileState extends State<ExerciseTile>
     with AutomaticKeepAliveClientMixin {
   bool? checkboxValue = false;

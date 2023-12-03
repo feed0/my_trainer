@@ -5,7 +5,6 @@ import '/views/components/app_title.dart';
 import '/view_models/users_viewmodel.dart';
 import 'package:provider/provider.dart';
 
-
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
   @override
@@ -18,32 +17,81 @@ class ProfilePage extends StatelessWidget {
     print(user.picture);
 
     return Scaffold(
-      // backgroundColor: Brand.background,
-      appBar: const AppTitle('Perfil'),
-      body: SizedBox(width:double.infinity, child: Column(children: [
-        Expanded(child: Center(child: CircleAvatar(backgroundImage: AssetImage(user.picture), radius: 100),)),
-        Column(children: [
-          Container(margin: const EdgeInsets.all(10), decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)), color:Colors.grey), padding: const EdgeInsets.only(top: 12, bottom: 6), 
-            child: TextFormField(enabled: false, keyboardType: TextInputType.text, controller: TextEditingController(text: user.name), decoration: const InputDecoration(labelText: 'Nome', hintText: 'Entre com seu nome',
-            disabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.transparent), // Borda invisível
-            ),
-          suffixIcon: Icon(Icons.edit)),)),
-          Container(margin: const EdgeInsets.all(10), decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)), color:Colors.grey), padding: const EdgeInsets.only(top: 12, bottom: 6), 
-          child: TextFormField(enabled: false, keyboardType: TextInputType.number, controller: TextEditingController(text: user.phone), decoration: const InputDecoration(labelText: 'Celular', hintText: 'Entre com seu número de celular',
-            disabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.transparent), // Borda invisível
-            ),
-          suffixIcon: Icon(Icons.edit)),)),
-          Container(margin: const EdgeInsets.all(10), decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)), color:Colors.grey), padding: const EdgeInsets.only(top: 12, bottom: 6), 
-          child: TextFormField(enabled: false, keyboardType: TextInputType.emailAddress, controller: TextEditingController(text: user.email), decoration: const InputDecoration(labelText: 'E-mail', hintText: 'Entre com seu email',
-            disabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.transparent), // Borda invisível
-            ),
-          suffixIcon: Icon(Icons.edit)),)),
-        ],)
-      ],),)
-    );
+        // backgroundColor: Brand.background,
+        appBar: const AppTitle('Perfil'),
+        body: SizedBox(
+          width: double.infinity,
+          child: Column(
+            children: [
+              Expanded(
+                  child: Center(
+                child: CircleAvatar(
+                    backgroundImage: AssetImage(user.picture), radius: 100),
+              )),
+              Column(
+                children: [
+                  Container(
+                      margin: const EdgeInsets.all(10),
+                      decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          color: Brand.containerBG),
+                      padding: const EdgeInsets.only(top: 12, bottom: 6),
+                      child: TextFormField(
+                        enabled: false,
+                        keyboardType: TextInputType.text,
+                        controller: TextEditingController(text: user.name),
+                        decoration: const InputDecoration(
+                            labelText: 'Nome',
+                            hintText: 'Entre com seu nome',
+                            disabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.transparent), // Borda invisível
+                            ),
+                            suffixIcon: Icon(Icons.edit)),
+                      )),
+                  Container(
+                      margin: const EdgeInsets.all(10),
+                      decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          color: Brand.containerBG),
+                      padding: const EdgeInsets.only(top: 12, bottom: 6),
+                      child: TextFormField(
+                        enabled: false,
+                        keyboardType: TextInputType.number,
+                        controller: TextEditingController(text: user.phone),
+                        decoration: const InputDecoration(
+                            labelText: 'Celular',
+                            hintText: 'Entre com seu número de celular',
+                            disabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.transparent), // Borda invisível
+                            ),
+                            suffixIcon: Icon(Icons.edit)),
+                      )),
+                  Container(
+                      margin: const EdgeInsets.all(10),
+                      decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          color: Brand.containerBG),
+                      padding: const EdgeInsets.only(top: 12, bottom: 6),
+                      child: TextFormField(
+                        enabled: false,
+                        keyboardType: TextInputType.emailAddress,
+                        controller: TextEditingController(text: user.email),
+                        decoration: const InputDecoration(
+                            labelText: 'E-mail',
+                            hintText: 'Entre com seu email',
+                            disabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.transparent), // Borda invisível
+                            ),
+                            suffixIcon: Icon(Icons.edit)),
+                      )),
+                ],
+              )
+            ],
+          ),
+        ));
     // return Scaffold(
     //   // backgroundColor: Brand.background,
     //   appBar: const AppTitle('Perfil'),
