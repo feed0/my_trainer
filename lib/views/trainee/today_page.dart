@@ -22,15 +22,16 @@ class TodayPage extends StatefulWidget {
 }
 
 class _TodayPageState extends State<TodayPage>
-    with AutomaticKeepAliveClientMixin {
-  @override
-  bool get wantKeepAlive => true;
+// with AutomaticKeepAliveClientMixin
+{
+  // @override
+  // bool get wantKeepAlive => true;
 
   final List exercises = ExercisesViewModel.exercises;
 
   @override
   Widget build(BuildContext context) {
-    super.build(context);
+    // super.build(context);
     return Scaffold(
       backgroundColor: Brand.background,
       appBar: const AppTitle('Hoje'),

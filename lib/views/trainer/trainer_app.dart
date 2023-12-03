@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '/views/profile_page.dart';
-import '/views/trainer/agenda_page.dart';
-import '/views/trainer/trainees_page.dart';
-
 import '/models/brand.dart';
+import '/views/profile_page.dart';
+// import '/views/trainer/agenda_page.dart';
+import '/views/trainer/trainees_page.dart';
+// import '/view_models/users_viewmodel.dart';
 
 void main() {
   runApp(
@@ -39,9 +39,10 @@ class TrainerNavigation extends StatefulWidget {
 class _TrainerNavigationState extends State<TrainerNavigation> {
   int currentPageIndex = 1;
 
+  // final User user = User.users[1];
+
   @override
   Widget build(BuildContext context) {
-    // final ThemeData theme = Theme.of(context);
     return Scaffold(
       bottomNavigationBar: NavigationBar(
         backgroundColor: Brand.background,
@@ -56,36 +57,22 @@ class _TrainerNavigationState extends State<TrainerNavigation> {
         destinations: const <Widget>[
           NavigationDestination(
             selectedIcon: Icon(Icons.home),
-            // icon: Icon(Icons.home_outlined),
-            // label: 'Home',
             icon: Icon(Icons.folder),
             label: 'Alunos',
           ),
+          // NavigationDestination(
+          //   icon: Icon(Icons.today),
+          //   label: 'Agenda',
+          // ),
           NavigationDestination(
-            // icon: Badge(child: Icon(Icons.notifications_sharp)),
-            // label: 'Notifications',
-            icon: Icon(Icons.today),
-            label: 'Agenda',
-          ),
-          NavigationDestination(
-            // icon: Badge(
-            //   label: Text('2'),
-            //   child: Icon(Icons.messenger_sharp),
-            // ),
-            // label: 'Messages',
             icon: Icon(Icons.account_circle),
             label: 'Perfil',
           ),
         ],
       ),
       body: <Widget>[
-        /// Trainees Page
         TraineesPage(),
-
-        /// Agenda Page
-        const AgendaPage(),
-
-        /// Profile Page
+        // const AgendaPage(),
         const ProfilePage(),
       ][currentPageIndex],
     );

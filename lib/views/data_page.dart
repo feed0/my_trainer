@@ -8,6 +8,7 @@ class DataPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final pessoa = ModalRoute.of(context)!.settings.arguments as Person;
+
     return Scaffold(
       appBar: AppBar(title: const Text('Dados Pessoais'), centerTitle: true),
       body: _body(pessoa),

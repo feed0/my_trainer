@@ -15,7 +15,7 @@ class TraineesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppTitle('Trainees'),
+      appBar: const AppTitle('Meus alunos'),
       body: GridView.count(
         reverse: true,
         crossAxisCount: 2,

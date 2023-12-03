@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-
 import '/models/brand.dart';
 import '/models/routes.dart';
-import '/models/person.dart';
+// import '/models/person.dart';
 import '/models/login_validation.dart';
-
 import 'components/custom_form_field.dart';
 import 'components/page_title.dart';
+import '/view_models/users_viewmodel.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -16,7 +15,7 @@ class LoginPage extends StatelessWidget {
   final Validation validar = Validation();
 
   // user data
-  final Person user = Person();
+  final User loginUser = User();
   final emailField = TextEditingController();
   final passwordField = TextEditingController();
 
@@ -44,7 +43,7 @@ class LoginPage extends StatelessWidget {
                             keyboardType: TextInputType.emailAddress,
                             validator: (email) =>
                                 validar.campoEmail(email.toString()),
-                            onSaved: (newValue) => user.email = newValue,
+                            onSaved: (newValue) => loginUser.email = newValue,
                             controller: emailField,
                           ),
                         ),
@@ -60,8 +59,9 @@ class LoginPage extends StatelessWidget {
                             validator: (senha) =>
                                 validar.campoSenha(senha.toString()),
                             onFieldSubmitted: (value) =>
-                                _onSubmit(context, user),
-                            onSaved: (newValue) => user.password = newValue,
+                                _onSubmit(context, loginUser),
+                            onSaved: (newValue) =>
+                                loginUser.password = newValue,
                             controller: passwordField,
                           ),
                         ),
@@ -73,7 +73,7 @@ class LoginPage extends StatelessWidget {
                           height:
                               50, // Adjust the height to make the button smaller
                           child: ElevatedButton(
-                            onPressed: () => _onSubmit(context, user),
+                            onPressed: () => _onSubmit(context, loginUser),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Brand.primary,
                               textStyle: const TextStyle(
@@ -99,21 +99,36 @@ class LoginPage extends StatelessWidget {
         ));
   }
 
-  void _onSubmit(inContext, Person user) {
+  void _onSubmit(inContext, User loginAttempt) {
     // valid form
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
 
       // credentials
-      String? email = user.email;
-      String? password = user.password;
+      String? emailAttempt = loginAttempt.email;
+      String? passwordAttempt = loginAttempt.password;
 
       // valid credentials
-      if (email == 'trainee@mail.com' && password == 'aaa123') {
+      final User trainee = User.users[0];
+      final User trainer = User.users[1];
+
+      // trainee credentials
+      if (emailAttempt == trainee.email &&
+          passwordAttempt == trainee.password) {
         Navigator.of(inContext).pushNamed(Routes.traineeApp);
+        loginAttempt.name = trainee.name;
+        loginAttempt.phone = trainee.phone;
+        loginAttempt.picture = trainee.picture;
         clearFields();
-      } else if (email == 'trainer@mail.com' && password == 'aaa123') {
-        Navigator.of(inContext).pushNamed(Routes.traineeApp);
+      }
+
+      // trainer credentials
+      else if (emailAttempt == trainer.email &&
+          passwordAttempt == trainer.password) {
+        Navigator.of(inContext).pushNamed(Routes.trainerApp);
+        loginAttempt.name = trainer.name;
+        loginAttempt.phone = trainer.phone;
+        loginAttempt.picture = trainer.picture;
         clearFields();
       }
 
