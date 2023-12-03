@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:my_trainer/login_state.dart';
 import '/models/brand.dart';
 import '/views/components/app_title.dart';
 import '/view_models/users_viewmodel.dart';
+import 'package:provider/provider.dart';
+
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
-
   @override
   Widget build(BuildContext context) {
-    final user = ModalRoute.of(context)!.settings.arguments as User;
+    User? user = Provider.of<LoginState>(context).user!;
+    print(user.name);
+    print(user.email);
+    print(user.password);
+    print(user.phone);
+    print(user.picture);
 
     return Scaffold(
       // backgroundColor: Brand.background,
@@ -47,6 +54,7 @@ class ProfilePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(Brand.padding),
               child: TextField(
+                controller: TextEditingController(text: user.phone),
                 decoration: InputDecoration(
                   labelText: 'Phone',
                   filled: true,
@@ -66,6 +74,7 @@ class ProfilePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(Brand.padding),
               child: TextField(
+                controller: TextEditingController(text: user.email),
                 decoration: InputDecoration(
                   labelText: 'E-mail',
                   filled: true,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../login_state.dart';
 import '/models/brand.dart';
 import '/models/routes.dart';
 // import '/models/person.dart';
@@ -6,6 +7,7 @@ import '/models/login_validation.dart';
 import 'components/custom_form_field.dart';
 import 'components/page_title.dart';
 import '/view_models/users_viewmodel.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -115,20 +117,16 @@ class LoginPage extends StatelessWidget {
       // trainee credentials
       if (emailAttempt == trainee.email &&
           passwordAttempt == trainee.password) {
+        Provider.of<LoginState>(inContext, listen: false).setUser(trainee);
         Navigator.of(inContext).pushNamed(Routes.traineeApp);
-        loginAttempt.name = trainee.name;
-        loginAttempt.phone = trainee.phone;
-        loginAttempt.picture = trainee.picture;
         clearFields();
       }
 
       // trainer credentials
       else if (emailAttempt == trainer.email &&
           passwordAttempt == trainer.password) {
+        Provider.of<LoginState>(inContext, listen: false).setUser(trainer);
         Navigator.of(inContext).pushNamed(Routes.trainerApp);
-        loginAttempt.name = trainer.name;
-        loginAttempt.phone = trainer.phone;
-        loginAttempt.picture = trainer.picture;
         clearFields();
       }
 

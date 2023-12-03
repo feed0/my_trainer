@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:my_trainer/login_state.dart';
+import 'package:my_trainer/view_models/users_viewmodel.dart';
 import '/models/brand.dart';
 import '/models/routes.dart';
 import '/views/trainee/trainee_app.dart';
 import '/views/trainer/trainer_app.dart';
 import '/views/login_page.dart';
+import 'package:provider/provider.dart';
 
-main() => runApp(const MyApp());
+void main() {
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => LoginState(),
+      child: const MyApp(),
+    ),
+  );
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

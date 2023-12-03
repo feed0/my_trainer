@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_trainer/view_models/users_viewmodel.dart';
 import '/models/brand.dart';
 import '/views/profile_page.dart';
 // import '/views/trainer/agenda_page.dart';
@@ -56,7 +57,7 @@ class _TrainerNavigationState extends State<TrainerNavigation> {
         selectedIndex: currentPageIndex,
         destinations: const <Widget>[
           NavigationDestination(
-            selectedIcon: Icon(Icons.home),
+            selectedIcon: Icon(Icons.folder),
             icon: Icon(Icons.folder),
             label: 'Alunos',
           ),
