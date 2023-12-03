@@ -1,16 +1,8 @@
-# my_trainer
+# Instruções:
 
-A new Flutter project.
+Ambos os amplicativos, para treinadores e alunos, rodam na mesma função main() em main.dart. Basta clicar em "Run". Assim a pagina de login é iniciada. Nela existe duas credenciais cadastradas: 
 
-## Getting Started
+- trainee@mail.com + aaa123
+- trainer@mail.com + aaa123
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Basta entrar com uma delas e explorar os dois apps.

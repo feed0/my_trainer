@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:my_trainer/login_state.dart';
-import 'package:my_trainer/view_models/users_viewmodel.dart';
+// import 'package:my_trainer/view_models/users_viewmodel.dart';
 import '/models/brand.dart';
 import '/models/routes.dart';
 import '/views/trainee/trainee_app.dart';
 import '/views/trainer/trainer_app.dart';
 import '/views/login_page.dart';
+// ignore: depend_on_referenced_packages
 import 'package:provider/provider.dart';
 
 void main() {
